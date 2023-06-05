@@ -37,10 +37,16 @@ function ConsultaUsuario() {
     for(let i = 0; i < 3; i++) {
         let respuesta = prompt("Conduce un vehiculo? Si o No?");
         respuesta = respuesta.toUpperCase();
+        
             if(respuesta == "SI") {
                 conduceAuto=true;
                 velocidad = prompt("ingrese velocidad(Km/h)");
                 velocidad = parseInt(velocidad);
+                while (isNaN(velocidad)){
+                    alert("Introduce un número por favor");
+                    velocidad = prompt("ingrese velocidad(Km/h)");
+                    velocidad = parseInt(velocidad);
+                }
             }else if(respuesta == "NO") {
                 conduceAuto = false;
             }else {
